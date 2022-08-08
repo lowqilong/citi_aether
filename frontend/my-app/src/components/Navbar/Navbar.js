@@ -4,21 +4,23 @@ import { Button } from "../Button";
 import "./Navbar.css"
 
 export default function Navbar() {
-    const [clicked, setClicked] = useState(false)
+    const [clicked, setClicked] = useState('')
 
     return (
         <nav className="NavbarItems">
             <h1 className="navbar-logo">
                 AETHER FINANCE<img src ={require("../../images/Penguin.png")} className="fab fa-react"/>
             </h1>
-            <div className="menu-icon" onClick={() => setClicked(!clicked)}>
+            <div className="menu-icon">
                 <i className={clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
             </div>
             <ul className={clicked ? "nav-menu active" : "nav-menu"}>
+            {console.log(clicked)}
                 {MenuItems.map((item, index) => {
                     return (
-                        <li key={index}>
-                            <a className={item.cName} href={item.url}>
+                        <li key={index} onClick={() => setClicked(item.title)}>
+                            
+                            <a className={clicked===item.title ? "nav-links active" : "nav-links"} href={item.url}>
                                 {item.title}
                             </a>
                         </li>
@@ -26,6 +28,7 @@ export default function Navbar() {
                 })}
             </ul>
             <Button>Sign In</Button>
+            <Button>Register</Button>
         </nav>
     )
 }
