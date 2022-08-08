@@ -1,0 +1,26 @@
+.home {
+  background-color: var(--secondary-bg);
+  width: 100%;
+  padding: 3rem 10rem;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.home > img {
+  align-self: center;
+  width: 50%;
+}
+.home > h2 {
+  color: var(--font-color-primary);
+}
+.home > small {
+  color: var(--font-color-secondary);
+}
+.home > .btn {
+  width: 8rem;
+}
+.home--wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
