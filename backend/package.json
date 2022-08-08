@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently \"cd connect && npm start\" \"cd payments && npm start\"",
-    "dev": "concurrently \"cd connect && npm run dev\" \"cd payments && npm run dev\"",
+    "start": "cross-env NODE_ENV=dev concurrently \"cd connect && npm start\" \"cd payments && npm start\"",
+    "dev": "cross-env NODE_ENV=dev concurrently \"cd connect && npm run dev\" \"cd payments && npm run dev\"",
     "install": "concurrently \"cd connect && npm i\" \"cd payments && npm i\""
   },
   "repository": {
@@ -27,6 +27,7 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "serverless": "^3.21.0"
   }
 }

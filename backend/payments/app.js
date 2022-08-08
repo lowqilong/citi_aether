@@ -7,8 +7,10 @@ app.get('/payments', (req, res) => {
     res.send('Payments')
 })
 
-// app.listen(port, () => {
-//     console.log(`Example app listening on port ${port}`)
-// })
+if (process.env.NODE_ENV) {
+    app.listen(port, () => {
+        console.log(`Example app listening on port ${port}`)
+    })
+}
 
 module.exports.handler = serverless(app);

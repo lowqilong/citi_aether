@@ -9,14 +9,16 @@ app.get('/connect', (req, res) => {
     // var obj = {'username' : 'keith', 'password' : 'keithpw'};
     var obj = {
         TableName: "CitiUsers",
-        Item: {'username' : 'keith', 'password' : 'keithpw'}
+        Item: { 'username': 'keith', 'password': 'keithpw' }
     };
     dynamoDB.put(obj);
     res.send('Connect' + JSON.stringify(obj));
 })
 
-// app.listen(port, () => {
-//     console.log(`Example app listening on port ${port}`)
-// })
+if (process.env.NODE_ENV) {
+    app.listen(port, () => {
+        console.log(`Example app listening on port ${port}`)
+    })
+}
 
 module.exports.handler = serverless(app);
