@@ -1,0 +1,22 @@
+{
+  "name": "citi_aether_backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lowqilong/citi_aether.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lowqilong/citi_aether/issues"
+  },
+  "homepage": "https://github.com/lowqilong/citi_aether#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
