@@ -7,12 +7,12 @@
 :root {
   --primary: grey;
   --primary-color: #DAA520;
---secondary-color: #B5AA99;
---secondary-bg: #FFEECB;
---secondary-bg-variant: #FFFDF6;
+  --secondary-color: #B5AA99;
+  --secondary-bg: #FFEECB;
+  --secondary-bg-variant: #FFFDF6;
 
---font-color-primary: #1A1A1A;
---font-color-secondary: #808080;
---font-color-positive: #1BD465;
+  --font-color-primary: #1A1A1A;
+  --font-color-secondary: #808080;
+  --font-color-positive: #1BD465;
 
 }

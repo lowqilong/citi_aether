@@ -4,23 +4,23 @@ import { Button } from "../Button";
 import "./Navbar.css"
 
 export default function Navbar() {
-    const [clicked, setClicked] = useState('')
+    const [toggleMenu, setToggle] = useState(false)
+    const [clicked, setClicked] = useState("")
 
     return (
         <nav className="NavbarItems">
-            <h1 className="navbar-logo">
-                AETHER FINANCE<img src ={require("../../images/Penguin.png")} className="fab fa-react"/>
-            </h1>
-            <div className="menu-icon">
-                <i className={clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
+            <h2 className="navbar-logo">
+                AETHER FINANCE
+                <img src ={require("../../images/Penguin.png")} alt="Aether Finance Logo" className="logo-image"/>
+            </h2>
+            <div className="menu-icon" onClick={() => setToggle(!toggleMenu)}>
+                <i className={toggleMenu ? 'fas fa-times' : 'fas fa-bars'}></i>
             </div>
-            <ul className={clicked ? "nav-menu active" : "nav-menu"}>
-            {console.log(clicked)}
+            <ul className={toggleMenu ? "nav-menu active" : "nav-menu"}>
                 {MenuItems.map((item, index) => {
                     return (
                         <li key={index} onClick={() => setClicked(item.title)}>
-                            
-                            <a className={clicked===item.title ? "nav-links active" : "nav-links"} href={item.url}>
+                            <a className={item.cName === "nav-links" ? clicked===item.title ? "nav-links active" : "nav-links" : "nav-links-mobile"} href={item.url}>
                                 {item.title}
                             </a>
                         </li>

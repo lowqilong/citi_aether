@@ -9,23 +9,22 @@
 }
 
 .navbar-logo {
-    color: #1BD465;
+    color: var(--primary-color);
     justify-self: start;
-    margin-left: 20px;
+    margin-left: 0;
     cursor: pointer;
     display: flex;
+    height: 80px;
 }
 
-.fa-react{
-    margin-left: 0.5rem;
-    font-size: 0.5rem;
-    height: 80px;
-    display: flex;
+.logo-image {
+    height: 60px;
+    transform: translate(0%, 10%);
 }
 
 .nav-menu {
     display: grid;
-    grid-template-columns: repeat(5, auto);
+    grid-template-columns: repeat(6, auto);
     grid-gap: 10px;
     list-style: none;
     text-align: center;
@@ -38,21 +37,23 @@
     color: #808080;
     text-decoration: none;
     padding: 0.5rem 1rem;
+    margin: 3px;
 }
 
-.nav-links:hover {
-    background-color: black;
-    border-radius: 4px;
-    transition: all 0.2s ease-out;
-}
 .nav-links.active{
     text-decoration: underline;
     color:var(--primary-color)
 }
 
+.nav-links:hover {
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 4px;
+    transition: all 0.2s ease-out;
+}
 
 .fa-bars {
-    color: white;
+    color: var(--primary-color);
 }
 
 .nav-links-mobile {
@@ -63,16 +64,21 @@
     display: none;
 }
 
-@media screen and (max-width: 120px) {
+@media screen and (max-width: 960px) {
     .NavbarItems {
         position: relative;
+    }
+
+    .logo-image {
+        height: 60px;
+        transform: translate(0%, -35%);
     }
 
     .nav-menu {
         display: flex;
         flex-direction: column;
         width: 100%;
-        height: 500px;
+        height: 650px;
         position: absolute;
         top: 80px;
         left: -100%;
@@ -81,11 +87,11 @@
     }
 
     .nav-menu.active {
-        background: darkblue;
+        background: white;
         left: 0;
         opacity: 1;
         transition: all 0.5s ease;
-        z-index: 2;
+        z-index: 1;
     }
 
     .nav-links {
@@ -96,7 +102,7 @@
     }
 
     .nav-links:hover {
-        background-color: blue;
+        background-color: var(--primary-color);
         border-radius: 0;
     }
 
@@ -105,6 +111,8 @@
         top: 0;
         left: 0;
         transform: translate(25%, 50%);
+        height: 80px;
+        display: flex;
     }
 
     .menu-icon {
@@ -125,18 +133,18 @@
     .nav-links-mobile {
         display: block;
         text-align: center;
-        padding: 1.5rem;
-        margin: 2rem auto;
+        padding: 1rem;
+        margin: 1rem auto;
         border-radius: 4px;
-        width: 80%;
-        background: lightblue;
+        width: 60%;
+        background: var(--primary);
         text-decoration: none;
         color: white;
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 
     .nav-links-mobile:hover {
-        background: black;
+        background: var(--primary-color);
         color: aliceblue;
         transition: 250ms;
     }
