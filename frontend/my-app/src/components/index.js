@@ -1,0 +1,5 @@
+export {default as Navbar} from './Navbar/Navbar'
+export {default as Home} from './home/Home'
+export {default as About} from './about/About'
+export {default as News} from './news/News'
+export {default as Footer} from './footer/Footer'

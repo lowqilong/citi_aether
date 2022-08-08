@@ -16,3 +16,9 @@
 --font-color-positive: #1BD465;
 
 }
+section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

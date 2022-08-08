@@ -4,7 +4,7 @@ import { Button } from "../Button";
 import "./Navbar.css"
 
 export default function Navbar() {
-    const [clicked, setClicked] = useState('')
+    const [clicked, setClicked] = useState('Home')
 
     return (
         <nav className="NavbarItems">
