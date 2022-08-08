@@ -1,12 +1,11 @@
 {
-  "name": "citi_aether_backend",
+  "name": "citi_aether_backend_connect",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently \"cd connect && npm start\" \"cd payments && npm start\"",
-    "dev": "concurrently \"cd connect && npm run dev\" \"cd payments && npm run dev\"",
-    "install": "concurrently \"cd connect && npm i\" \"cd payments && npm i\""
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +19,10 @@
   "homepage": "https://github.com/lowqilong/citi_aether#readme",
   "dependencies": {
     "axios": "^0.27.2",
-    "concurrently": "^7.3.0"
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
   }
 }
