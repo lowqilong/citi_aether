@@ -1,0 +1,20 @@
+	
+service: citi-aether-backend
+ 
+provider:
+  name: aws
+  runtime: nodejs16.x
+  stage: dev
+  region: ap-southeast-1
+ 
+functions:
+  connect:
+    handler: connect/app.handler
+    events:
+      - http: ANY /connect
+      - http: 'ANY /connect/{proxy+}'
+  payments:
+    handler: payments/app.handler
+    events:
+      - http: ANY /payments
+      - http: 'ANY /payments/{proxy+}'
