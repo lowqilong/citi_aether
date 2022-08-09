@@ -5,7 +5,8 @@ import { Education } from "./pages/Education";
 import { Home } from "./pages/Home";
 import { Setting } from "./pages/Setting";
 import { Navbar } from "./components/index";
-import {AllNews} from "./pages/AllNews";
+import { AllNews } from "./pages/AllNews";
+import { Payment } from "./pages/Payment";
 
 import { Amplify } from 'aws-amplify';
 import { withAuthenticator } from '@aws-amplify/ui-react';
@@ -26,6 +27,7 @@ function App({signOut}) {
                 <Route path="/allnews" element={<AllNews />} />
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/education" element={<Education />} />
+                <Route path="/payment" element={<Payment />} />
                 <Route path="/setting" element={<Setting />} />
             </Routes>
         </div>

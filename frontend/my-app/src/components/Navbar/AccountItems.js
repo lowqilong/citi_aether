@@ -2,16 +2,21 @@ export const AccountItems = [
     {
         title: "Dashboard",
         url: "dashboard",
-        cName: "nav-links"
+        cName: "account-links"
+    },
+    {
+        title: "Payment",
+        url: "payment",
+        cName: "account-links"
     },
     {
         title: "Setting",
         url: "setting",
-        cName: "nav-links"
+        cName: "account-links"
     },
     {
         title: "Logout",
         url: "logout",
-        cName: "nav-links"
+        cName: "account-links"
     }
 ]
