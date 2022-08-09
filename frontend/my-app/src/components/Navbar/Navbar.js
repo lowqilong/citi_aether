@@ -34,8 +34,8 @@ export default function Navbar() {
             <ul className={toggleDropDown ? "account-menu active" : "account-menu"}>
                 {AccountItems.map((item, index) => {
                     return (
-                            <li key={index} onClick={() => setClicked(item.title)}>
-                                <Link className={item.cName === "nav-links" ? clicked===item.title ? "nav-links active" : "nav-links" : "nav-links-mobile"} to={item.url}>
+                            <li key={index} onClick={() => setClicked(item.title)} className={clicked===item.title ? "account-links active" : "account-links"}>
+                                <Link to={item.url} className={clicked===item.title ? "account-links active" : "account-links" }>
                                     {item.title}
                                 </Link>
                             </li>

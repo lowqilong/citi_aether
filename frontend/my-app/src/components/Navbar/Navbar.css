@@ -36,29 +36,27 @@
 
 .account-menu {
     position: absolute;
-    top: 80px;
-    left: -100%;
+    top: -200px;
+    right: 0;
+    color: white;
+    display: None;
 }
 
 .account-menu.active{
-    /* display: flex; */
-    /* flex-direction: column; */
-    background-color: black;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
     list-style: none;
     text-align: center;
+    height: 150px;
     width: 150px;
-    /* height: 100px; */
     position: absolute;
-    top: 120px;
-    /* transform: translate(100%, 60%); */
-    /* right: 150px; */
-    /* right: 0; */
-    left: 0;
+    top: 100px;
+    right: 0;
     justify-content: center;
-    /* margin-right: 2rem; */
     transition: all 0.5s ease;
-    /* float: right; */
     padding: 5;
+    border-radius: 20px;
 }
 
 .profile-picture {
@@ -79,6 +77,26 @@
 }
 
 .nav-links:hover {
+    background-color: #808080;
+    color: white;
+    border-radius: 4px;
+    transition: all 0.2s ease-out;
+}
+
+.account-links {
+    color: #808080;
+    text-decoration: none;
+    padding-bottom: 5px;
+    margin: 3px;
+    padding-top: 5px;
+}
+
+.account-links.active{
+    text-decoration: underline;
+    color:var(--primary-color)
+}
+
+.account-links:hover {
     background-color: var(--primary-color);
     color: white;
     border-radius: 4px;
