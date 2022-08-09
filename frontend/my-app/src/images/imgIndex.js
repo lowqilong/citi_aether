@@ -1,1 +1,1 @@
-export {default as Home1} from './home1.png'
+export {default as Intro1} from './intro1.png'

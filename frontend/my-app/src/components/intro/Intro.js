@@ -1,21 +1,21 @@
 import React from "react";
-import { Home1 } from "../../images/imgIndex";
-import "./home.css";
+import { Intro1 } from "../../images/imgIndex";
+import "./intro.css";
 import { Button } from "../Button";
-const Home = () => {
+const Intro = () => {
   return (
     <section>
-      <div className="home">
-        <div className="home--wrapper">
+      <div className="intro">
+        <div className="intro--wrapper">
           <h2>Investment made easier</h2>
           <small>Make your spare change work harder for you</small>
           <Button children="Learn How" />
         </div>
 
-        <img src={Home1} alt="home img" />
+        <img src={Intro1} alt="intro img" />
       </div>
     </section>
   );
 };
 
-export default Home;
+export default Intro;

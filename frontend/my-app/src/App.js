@@ -1,15 +1,28 @@
 import './App.css';
-import {Navbar, Home, About, News, Footer} from "./components/index"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Dashboard } from "./pages/Dashboard";
+import { Education } from "./pages/Education";
+import { Home } from "./pages/Home";
+import { Setting } from "./pages/Setting";
+import { Navbar } from "./components/index";
+import { SignIn } from "./pages/SignIn";
+import { Register } from "./pages/Register";
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <Home/>
-      <About/>
-      <News/>
-      <Footer/>
-    </div>
+    <Router>
+        <div className="App">
+            <Navbar />
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/education" element={<Education />} />
+                <Route path="/setting" element={<Setting />} />
+                <Route path="/signin" element={<SignIn />} />
+                <Route path="/register" element={<Register />} />
+            </Routes>
+        </div>
+    </Router>
   );
 }
 

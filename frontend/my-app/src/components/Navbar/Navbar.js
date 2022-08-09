@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { MenuItems } from "./MenuItems";
 import { Button } from "../Button";
+import { Link } from "react-router-dom"
 import "./Navbar.css"
 
 export default function Navbar() {
@@ -20,9 +21,9 @@ export default function Navbar() {
                 {MenuItems.map((item, index) => {
                     return (
                         <li key={index} onClick={() => setClicked(item.title)}>
-                            <a className={item.cName === "nav-links" ? clicked===item.title ? "nav-links active" : "nav-links" : "nav-links-mobile"} href={item.url}>
+                            <Link className={item.cName === "nav-links" ? clicked===item.title ? "nav-links active" : "nav-links" : "nav-links-mobile"} to={item.url}>
                                 {item.title}
-                            </a>
+                            </Link>
                         </li>
                     )
                 })}
