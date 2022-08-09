@@ -19,7 +19,8 @@
 .news--wrapper>div{
     padding:1rem;
 }
-.news--wrapper>div>p{
+.news--wrapper>div>a{
+    text-decoration: none;
     display: flex;
     gap: 0.2rem;
     align-items: center;

@@ -38,15 +38,11 @@ const NewsArticles = ({ count }) => {
                 <div>
                   <h3>{data.title}</h3>
 
-                  <p>
-                    <Link
-                      to="/allnews/content" hash={`#${index}`}
-                       state={{index:index, title:data.title, link:data.url}}
-                      
-                    >
+                  <a href={data.url} target="_blank">
+                    
                       Read more <i className="fa-solid fa-arrow-right-long"></i>
-                    </Link>
-                  </p>
+                    
+                  </a>
                 </div>
               </div>
             );
