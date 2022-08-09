@@ -1,17 +1,14 @@
 import './App.css';
-import { Navbar, Home, About, News, Footer } from "./components/index"
-import { Amplify, Auth } from 'aws-amplify';
-import awsconfig from './aws-exports';
-Amplify.configure(awsconfig);
+import {Navbar, Home, About, News, Footer} from "./components/index"
 
-function App({ signOut, user }) {
+function App() {
   return (
     <div className="App">
       <Navbar />
-      <Home />
-      <About />
-      <News />
-      <Footer />
+      <Home/>
+      <About/>
+      <News/>
+      <Footer/>
     </div>
   );
 }
