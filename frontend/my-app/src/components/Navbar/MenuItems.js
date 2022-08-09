@@ -18,15 +18,5 @@ export const MenuItems = [
         title: "Education",
         url: "education",
         cName: "nav-links"
-    },
-    {
-        title: "Sign In",
-        url: "#",
-        cName: "nav-links-mobile"
-    },
-    {
-        title: "Register",
-        url: "#",
-        cName: "nav-links-mobile"
     }
 ]

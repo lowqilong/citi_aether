@@ -28,12 +28,6 @@ export default function Navbar() {
                     )
                 })}
             </ul>
-            <Link to={"signin"}>
-                <Button>Sign In</Button>
-            </Link>
-            <Link to={"register"}>
-                <Button>Register</Button>
-            </Link>
         </nav>
     )
 }
