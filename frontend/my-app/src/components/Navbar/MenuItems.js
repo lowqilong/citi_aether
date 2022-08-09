@@ -6,12 +6,12 @@ export const MenuItems = [
     },
     {
         title: "About",
-        url: "dashboard",
+        url: "/#about",
         cName: "nav-links"
     },
     {
         title: "News",
-        url: "allnews",
+        url: "/#news",
         cName: "nav-links"
     },
     {

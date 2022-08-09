@@ -6,7 +6,12 @@ import "./Navbar.css"
 
 export default function Navbar() {
     const [toggleMenu, setToggle] = useState(false)
-    const [clicked, setClicked] = useState("")
+    const [clicked, setClicked] = useState("Home")
+
+    function handleScroll(e){
+        const element = e.toLowerCase()
+        document.getElementById(`${element}`)?.scrollIntoView()
+    }
 
     return (
         <nav className="NavbarItems">
@@ -20,8 +25,9 @@ export default function Navbar() {
             <ul className={toggleMenu ? "nav-menu active" : "nav-menu"}>
                 {MenuItems.map((item, index) => {
                     return (
-                        <li key={index} onClick={() => setClicked(item.title)}>
-                            <Link className={item.cName === "nav-links" ? clicked===item.title ? "nav-links active" : "nav-links" : "nav-links-mobile"} to={item.url}>
+                        <li key={index} onClick={function(e) {setClicked(item.title);
+                        handleScroll(e.target.innerText)}}>
+                            <Link className={item.cName === "nav-links" ? clicked===item.title ? "nav-links active" : "nav-links" : "nav-links-mobile"} to={item.url} >
                                 {item.title}
                             </Link>
                         </li>

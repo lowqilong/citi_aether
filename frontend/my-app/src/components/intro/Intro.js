@@ -4,7 +4,7 @@ import "./intro.css";
 import { Button } from "../Button";
 const Intro = () => {
   return (
-    <section>
+    <section id='home'>
       <div className="intro">
         <div className="intro--wrapper">
           <h2>Investment made easier</h2>

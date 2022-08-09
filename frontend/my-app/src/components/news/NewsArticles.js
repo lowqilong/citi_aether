@@ -29,7 +29,6 @@ const NewsArticles = ({ count }) => {
     <section>
       <h2>Important Everyday News to Keep You Updated</h2>
       <div className="news--container">
-        {console.log(console.log(news))}
         {news.map((data, index) => {
           if (index < count) {
             return (
