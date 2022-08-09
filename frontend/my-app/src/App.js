@@ -6,9 +6,11 @@ import { Home } from "./pages/Home";
 import { Setting } from "./pages/Setting";
 import { Navbar } from "./components/index";
 import {AllNews} from "./pages/AllNews";
+
 import { Amplify } from 'aws-amplify';
 import { withAuthenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
+
 
 import awsExports from './aws-exports';
 Amplify.configure(awsExports);
