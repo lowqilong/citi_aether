@@ -6,6 +6,7 @@
     align-items: center;
     font-size: 1.2rem;
     padding: 20px;
+    position: relative;
 }
 
 .navbar-logo {
@@ -33,6 +34,36 @@
     margin-right: 2rem;
 }
 
+.account-menu {
+    position: absolute;
+    top: -200px;
+    right: 0;
+    color: white;
+    display: None;
+}
+
+.account-menu.active{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    list-style: none;
+    text-align: center;
+    height: 150px;
+    width: 150px;
+    position: absolute;
+    top: 100px;
+    right: 0;
+    justify-content: center;
+    transition: all 0.5s ease;
+    padding: 5;
+    border-radius: 20px;
+}
+
+.profile-picture {
+    height: 60px;
+    cursor: pointer;
+}
+
 .nav-links {
     color: #808080;
     text-decoration: none;
@@ -46,6 +77,26 @@
 }
 
 .nav-links:hover {
+    background-color: #808080;
+    color: white;
+    border-radius: 4px;
+    transition: all 0.2s ease-out;
+}
+
+.account-links {
+    color: #808080;
+    text-decoration: none;
+    padding-bottom: 5px;
+    margin: 3px;
+    padding-top: 5px;
+}
+
+.account-links.active{
+    text-decoration: underline;
+    color:var(--primary-color)
+}
+
+.account-links:hover {
     background-color: var(--primary-color);
     color: white;
     border-radius: 4px;
@@ -78,7 +129,7 @@
         display: flex;
         flex-direction: column;
         width: 100%;
-        height: 650px;
+        height: 450px;
         position: absolute;
         top: 80px;
         left: -100%;
@@ -149,7 +200,13 @@
         transition: 250ms;
     }
 
+    .profile-picture {
+        display: None;
+    }
+
     Button {
         display: None;
     }
+
+
 }

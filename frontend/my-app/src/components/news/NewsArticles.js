@@ -1,7 +1,6 @@
 import { React, useEffect, useState } from "react";
 import axios from "axios";
 import "./news.css";
-import { Button } from "../Button";
 import { Link } from "react-router-dom";
 import Content from "./Content";
 const NewsArticles = ({ count }) => {

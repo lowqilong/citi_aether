@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import { AccountItems } from "./AccountItems";
 import { MenuItems } from "./MenuItems";
 import { Button } from "../Button";
-import { Link } from "react-router-dom"
-import "./Navbar.css"
+import { Link } from "react-router-dom";
+import "./Navbar.css";
 
 export default function Navbar() {
+
     const [toggleMenu, setToggle] = useState(false)
     const [clicked, setClicked] = useState("Home")
 
@@ -12,6 +14,11 @@ export default function Navbar() {
         const element = e.toLowerCase()
         document.getElementById(`${element}`)?.scrollIntoView()
     }
+
+  const [toggleMenu, setToggle] = useState(false);
+  const [clicked, setClicked] = useState("");
+  const [toggleDropDown, setDropDown] = useState(false);
+
 
     return (
         <nav className="NavbarItems">
@@ -31,6 +38,18 @@ export default function Navbar() {
                                 {item.title}
                             </Link>
                         </li>
+                    )
+                })}
+            </ul>
+            <img src = {require("../../images/profilepic.png")} alt="Profile Picture" className="profile-picture" onClick={() => setDropDown(!toggleDropDown)}/>
+            <ul className={toggleDropDown ? "account-menu active" : "account-menu"}>
+                {AccountItems.map((item, index) => {
+                    return (
+                            <li key={index} onClick={() => setClicked(item.title)} className={clicked===item.title ? "account-links active" : "account-links"}>
+                                <Link to={item.url} className={clicked===item.title ? "account-links active" : "account-links" }>
+                                    {item.title}
+                                </Link>
+                            </li>
                     )
                 })}
             </ul>
