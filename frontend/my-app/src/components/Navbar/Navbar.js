@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import { AccountItems } from "./AccountItems";
 import { MenuItems } from "./MenuItems";
 import { Button } from "../Button";
-import { Link } from "react-router-dom"
-import "./Navbar.css"
+import { Link } from "react-router-dom";
+import "./Navbar.css";
 
 export default function Navbar() {
-    const [toggleMenu, setToggle] = useState(false)
-    const [clicked, setClicked] = useState("")
-    const [toggleDropDown, setDropDown] = useState(false)
+  const [toggleMenu, setToggle] = useState(false);
+  const [clicked, setClicked] = useState("");
+  const [toggleDropDown, setDropDown] = useState(false);
 
     return (
         <nav className="NavbarItems">
