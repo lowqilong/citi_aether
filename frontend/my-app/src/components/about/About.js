@@ -13,7 +13,7 @@ const data = [
     index:2,
     title: "Bite-sized investments",
     content:
-      "Set managable amounts to invest. Helping you with dollar-cost averaging that will reward you in the long run",
+      "Set manageable amounts to invest. Helping you with dollar-cost averaging that will reward you in the long run",
     img: chart1,
   },
   {

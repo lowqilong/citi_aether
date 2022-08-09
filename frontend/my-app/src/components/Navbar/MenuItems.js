@@ -11,7 +11,7 @@ export const MenuItems = [
     },
     {
         title: "News",
-        url: "setting",
+        url: "allnews",
         cName: "nav-links"
     },
     {

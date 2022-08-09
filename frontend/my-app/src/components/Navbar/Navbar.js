@@ -28,8 +28,12 @@ export default function Navbar() {
                     )
                 })}
             </ul>
-            <Button>Sign In</Button>
-            <Button>Register</Button>
+            <Link to={"signin"}>
+                <Button>Sign In</Button>
+            </Link>
+            <Link to={"register"}>
+                <Button>Register</Button>
+            </Link>
         </nav>
     )
 }

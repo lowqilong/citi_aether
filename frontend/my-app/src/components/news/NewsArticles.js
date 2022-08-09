@@ -3,7 +3,7 @@ import axios from "axios";
 import "./news.css";
 import { Button } from "../Button";
 import { Link } from "react-router-dom";
-const News = () => {
+const NewsArticles = () => {
   const [news, setNews] = useState([]);
   const [loading, setLoading] = useState(true);
   const [isErr, setIsErr] = useState(false);
@@ -26,11 +26,10 @@ const News = () => {
 
   return (
     <section>
-      <small>News</small>
       <h2>Important Everyday News to Keep You Updated</h2>
       <div className="news--container">
         {news.map((data, index) => {
-          if (index < 4) {
+          if (index < 10) {
             return (
               <div key={index} className="news--wrapper">
                 <img src={data.urlToImage} alt={data.title} />
@@ -43,11 +42,8 @@ const News = () => {
           }
         })}
       </div>
-      <Link to={"allnews"}>
-          <Button children='View All'/>
-      </Link>
     </section>
   );
 };
 
-export default News;
+export default NewsArticles;

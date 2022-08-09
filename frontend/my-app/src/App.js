@@ -7,6 +7,7 @@ import { Setting } from "./pages/Setting";
 import { Navbar } from "./components/index";
 import { SignIn } from "./pages/SignIn";
 import { Register } from "./pages/Register";
+import {AllNews} from "./pages/AllNews";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
             <Navbar />
             <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="/allnews" element={<AllNews />} />
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/education" element={<Education />} />
                 <Route path="/setting" element={<Setting />} />
