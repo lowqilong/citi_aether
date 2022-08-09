@@ -6,6 +6,7 @@
     align-items: center;
     font-size: 1.2rem;
     padding: 20px;
+    position: relative;
 }
 
 .navbar-logo {
@@ -31,6 +32,38 @@
     width: 70vw;
     justify-content: end;
     margin-right: 2rem;
+}
+
+.account-menu {
+    position: absolute;
+    top: 80px;
+    left: -100%;
+}
+
+.account-menu.active{
+    /* display: flex; */
+    /* flex-direction: column; */
+    background-color: black;
+    list-style: none;
+    text-align: center;
+    width: 150px;
+    /* height: 100px; */
+    position: absolute;
+    top: 120px;
+    /* transform: translate(100%, 60%); */
+    /* right: 150px; */
+    /* right: 0; */
+    left: 0;
+    justify-content: center;
+    /* margin-right: 2rem; */
+    transition: all 0.5s ease;
+    /* float: right; */
+    padding: 5;
+}
+
+.profile-picture {
+    height: 60px;
+    cursor: pointer;
 }
 
 .nav-links {
@@ -78,7 +111,7 @@
         display: flex;
         flex-direction: column;
         width: 100%;
-        height: 650px;
+        height: 450px;
         position: absolute;
         top: 80px;
         left: -100%;
@@ -149,7 +182,13 @@
         transition: 250ms;
     }
 
+    .profile-picture {
+        display: None;
+    }
+
     Button {
         display: None;
     }
+
+
 }
