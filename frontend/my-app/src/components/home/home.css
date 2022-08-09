@@ -5,10 +5,12 @@
   display: flex;
   gap: 1rem;
   align-items: flex-start;
+  justify-content: center;
 }
 .home > img {
   align-self: center;
   width: 50%;
+  
 }
 .home > h2 {
   color: var(--font-color-primary);
