@@ -26,7 +26,7 @@ const data = [
 ];
 const About = () => {
   return (
-    <section>
+    <section id='about'>
       <div className="about">
         <small>What We Do?</small>
 
