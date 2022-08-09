@@ -5,10 +5,12 @@
   display: flex;
   gap: 1rem;
   align-items: flex-start;
+  justify-content: center;
 }
 .intro > img {
   align-self: center;
   width: 50%;
+  
 }
 .intro > h2 {
   color: var(--font-color-primary);

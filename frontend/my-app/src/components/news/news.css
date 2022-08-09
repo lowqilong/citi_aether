@@ -1,0 +1,27 @@
+.news--container{
+    display:flex;
+    flex-direction:column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.news--wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    background-color: var(--secondary-bg);
+    border-radius: 10px;
+    overflow: hidden;
+}
+.news--wrapper>img{
+    width:100%;
+    max-height: 200px;
+}
+.news--wrapper>div{
+    padding:1rem;
+}
+.news--wrapper>div>p{
+    display: flex;
+    gap: 0.2rem;
+    align-items: center;
+    color: var(--primary-color);
+}
