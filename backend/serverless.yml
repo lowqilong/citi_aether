@@ -7,15 +7,10 @@ provider:
   region: ap-southeast-1
 
 functions:
-  connect:
-    handler: connect/app.handler
+  base:
+    handler: app.handler
     events:
-      - http: ANY connect
-      - http: "ANY {proxy+}"
-  payments:
-    handler: payments/app.handler
-    events:
-      - http: ANY payments
+      - http: ANY /
       - http: "ANY {proxy+}"
 
 resources:
