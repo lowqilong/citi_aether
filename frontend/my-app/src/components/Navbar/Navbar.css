@@ -37,7 +37,7 @@
 .account-menu {
     position: absolute;
     top: 80px;
-    left: -100%;
+    right:0;
 }
 
 .account-menu.active{
@@ -53,7 +53,7 @@
     /* transform: translate(100%, 60%); */
     /* right: 150px; */
     /* right: 0; */
-    left: 0;
+    right: 0;
     justify-content: center;
     /* margin-right: 2rem; */
     transition: all 0.5s ease;
