@@ -5,15 +5,23 @@ import { Education } from "./pages/Education";
 import { Home } from "./pages/Home";
 import { Setting } from "./pages/Setting";
 import { Navbar } from "./components/index";
-import { SignIn } from "./pages/SignIn";
-import { Register } from "./pages/Register";
 import {AllNews} from "./pages/AllNews";
+
 import Content from './components/news/Content';
 
-function App() {
+import { Amplify } from 'aws-amplify';
+import { withAuthenticator } from '@aws-amplify/ui-react';
+import '@aws-amplify/ui-react/styles.css';
+
+
+import awsExports from './aws-exports';
+Amplify.configure(awsExports);
+
+function App({signOut}) {
   return (
     <Router>
         <div className="App">
+        <button onClick={signOut}>Sign out</button>
             <Navbar />
             <Routes>
                 <Route path="/" element={<Home />} />
@@ -22,12 +30,10 @@ function App() {
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/education" element={<Education />} />
                 <Route path="/setting" element={<Setting />} />
-                <Route path="/signin" element={<SignIn />} />
-                <Route path="/register" element={<Register />} />
             </Routes>
         </div>
     </Router>
   );
 }
 
-export default App;
+export default withAuthenticator(App);

@@ -10,6 +10,11 @@
       "StackName": "amplify-amplify3bbeb7622ba24-staging-20844",
       "StackId": "arn:aws:cloudformation:ap-southeast-1:667341329338:stack/amplify-amplify3bbeb7622ba24-staging-20844/326b3030-1788-11ed-8694-021966f7f3ae",
       "AmplifyAppId": "dnc9glcbz50aw"
+    },
+    "categories": {
+      "auth": {
+        "citiaether": {}
+      }
     }
   }
 }
