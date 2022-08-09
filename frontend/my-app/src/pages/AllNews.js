@@ -3,7 +3,7 @@ import { NewsArticles } from "../components";
 export function AllNews() {
     return (
         <div>
-            <NewsArticles />
+            <NewsArticles count='10'/>
         </div>
     );
 }
