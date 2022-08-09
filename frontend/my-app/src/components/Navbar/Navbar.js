@@ -5,7 +5,7 @@ import { Button } from "../Button";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 
-export default function Navbar() {
+export default function Navbar({ logout }) {
 
   function handleScroll(e) {
     const element = e.toLowerCase();
@@ -66,7 +66,9 @@ export default function Navbar() {
           return (
             <li
               key={index}
-              onClick={() => setClicked(item.title)}
+              onClick={function () {
+                setClicked(item.title);
+              }}
               className={
                 clicked === item.title
                   ? "account-links active"
@@ -86,6 +88,9 @@ export default function Navbar() {
             </li>
           );
         })}
+        <li>
+          <Button children="Logout" onClick={logout} />
+        </li>
       </ul>
     </nav>
   );

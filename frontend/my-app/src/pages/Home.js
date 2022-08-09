@@ -6,7 +6,6 @@ export function Home() {
       <Intro />
       <About />
       <News />
-      <Footer />
     </div>
   );
 }

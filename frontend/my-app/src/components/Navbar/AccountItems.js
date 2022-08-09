@@ -14,9 +14,5 @@ export const AccountItems = [
         url: "setting",
         cName: "account-links"
     },
-    {
-        title: "Logout",
-        url: "logout",
-        cName: "account-links"
-    }
+
 ]
