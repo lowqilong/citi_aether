@@ -1,5 +1,8 @@
 import axios from "axios";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import { Button } from "../Button";
+import "./PaymentSection.css";
 
 export function PaymentSection() {
     const [success, setSuccess] = useState(false)
@@ -35,17 +38,30 @@ export function PaymentSection() {
             console.log(err)
         }
     };
+
+    const submitDummy = (event) => {
+        event.preventDefault();
+        setSuccess(true)
+    }
+    
+    const makePaymentDummy = (event) => {
+        event.preventDefault();
+        setSuccess(false)
+    }
+
     return (
-        <>
+        <div className="paymentSec">
             {success ? (
                 <section>
                     <h1>Success!</h1>
-                    <p>
-                        Make Another Payment
-                    </p>
+                    <Link to={""}>
+                        <Button onClick={makePaymentDummy}>
+                            Make Another Payment
+                        </Button>
+                    </Link>
                 </section>
             ) : (
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={submitDummy} className="paymentForm">
                     <h1>Payment</h1>
                     <label>Pay To</label>
                     <input type="text" name="Paying To" />
@@ -53,10 +69,10 @@ export function PaymentSection() {
                     <input type="text" name="Description of transaction" />
                     <label>Amount</label>
                     <input type="float" name="Enter payment amount" />
-                    <input type="submit" value="Submit" />
+                    <input type="submit"/>
                 </form>
             )}
-        </>
+        </div>
     );
 }
 
