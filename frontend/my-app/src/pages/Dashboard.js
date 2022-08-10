@@ -14,6 +14,8 @@ import {
   Legend,
 } from 'chart.js';
 
+const axios = require('axios').default;
+
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -24,54 +26,27 @@ ChartJS.register(
   Legend
 );
 
-export const options = {
-  responsive: false,
-  maintainAspectRatio: false,
-  plugins: {
-    legend: {
-      position: 'top'
-    },
-    title: {
-      display: true,
-      text: 'Portfolio Value Over Time',
-    },
-  }
-};
-
-const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-const axios = require('axios').default;
-
-export const data = {
-  labels,
-  datasets: [
-    {
-      label: 'Dataset 1',
-      data: labels.map(() => Math.random() * 1000),
-      borderColor: 'rgb(255, 99, 132)',
-      backgroundColor: 'rgba(255, 99, 132, 0.5)',
-      tension: 0.2
-    }
-  ],
-};
-
 export function Dashboard() {
+  // initialise all the vars to store dynamoDB values
   const [userInvestments, setinvestments] = useState([]);
-  const [userPortfolio, setPortfolio] = useState([]);
+  var [userPortfolio, setPortfolio] = useState([]);
   const [userLastDailyPortfolio, setLastDailyPortfolio] = useState([]);
   const [userRoundingValue, setRoundingValue] = useState([]);
   const [userMainInvestment, setMainInvestment] = useState([]);
   const [userTransactionHistory, setTransactionHistory] = useState([]);
+
+  // const [userDailyPortfolioList, setDailyPortfolioList] = useState([]);
   const fetchData = async () => {
-    const data = await axios.post('https://24bpm8rci1.execute-api.ap-southeast-1.amazonaws.com/dev/getUserDetails',
+    const getData = await axios.post('https://24bpm8rci1.execute-api.ap-southeast-1.amazonaws.com/dev/getUserDetails',
       {
         "username": "keith"
       },
     )
       .then(function (response) {
         setinvestments(response.data.investments);
-        setPortfolio(response.data.dailyPortfolioValue);
+        setPortfolio(JSON.stringify(response.data.dailyPortfolioValue));
         setLastDailyPortfolio(response.data.dailyPortfolioValue[response.data.dailyPortfolioValue.length - 1].investments);
-        console.log(response.data);
+        // console.log(response.data);
       })
       .catch(function (error) {
         console.log(error);
@@ -81,7 +56,7 @@ export function Dashboard() {
     fetchData();
   }, []);
 
-  console.log(userLastDailyPortfolio.cash);
+  // console.log(typeof(userPortfolio));
   // values to populate to web page
   var currentPortfolioValue = 0;
 
@@ -100,6 +75,37 @@ export function Dashboard() {
     }
   }
   portfolioReturn = ((currentPortfolioValue - totalInvested) / totalInvested * 100).toFixed(2);
+
+  // chartJS stuff
+  const options = {
+    responsive: false,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        position: 'top'
+      },
+      title: {
+        display: true,
+        text: 'Portfolio Value Over Time',
+      },
+    }
+  };
+
+  var labels = ["2022-08-01", "2022-08-02", "2022-08-03", "2022-08-04"];
+
+  const data = {
+    labels,
+    datasets: [
+      {
+        label: 'Dataset 1',
+        // data: labels.map(() => Math.random() * 1000),
+        data: [1003.45, 1000.49, 1005.56, 1027.76],
+        borderColor: 'rgb(255, 99, 132)',
+        backgroundColor: 'rgba(255, 99, 132, 0.5)',
+        tension: 0.2
+      }
+    ],
+  };
 
   return (
     <div>
