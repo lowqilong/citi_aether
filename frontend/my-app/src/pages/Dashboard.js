@@ -56,7 +56,7 @@ export function Dashboard() {
   return (
     <div>
       <h1>Dashboard</h1>
-      <div style={{ flexDirection: "row", display: 'flex', gap: '20px' }}>
+      <div style={{ flexDirection: "row", display: 'flex', gap: '20px', justifyContent: 'space-around' }}>
         <Card className="customCard" style={{ width: '18rem', textAlign: 'center' }}>
           <Card.Body>
             <Card.Title>Current Value</Card.Title>
@@ -85,7 +85,7 @@ export function Dashboard() {
       <div style={{ margin: '50px 0' }}>
         <Line options={options} data={data} width="1200" height="350" style={{ margin: "0 auto" }} />
       </div>
-      <div style={{ flexDirection: "row", display: 'flex', gap: '20px', justifyContent: 'space-between' }}>
+      <div style={{ flexDirection: "row", display: 'flex', gap: '20px', justifyContent: 'space-around' }}>
         <Card className="customCard" style={{ width: '45%', textAlign: 'center' }}>
           <Card.Body style={{ paddingBottom: '0' }}>
             <Card.Title>Portfolio Value</Card.Title>

@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { AccountItems } from "./AccountItems";
 import { MenuItems } from "./MenuItems";
 import { Button } from "../Button";
@@ -8,7 +8,7 @@ import "./Navbar.css";
 export default function Navbar({ logout }) {
 
   function handleScroll(e) {
-    localStorage.setItem('lsLocation',e.toLowerCase())
+    localStorage.setItem('lsLocation', e.toLowerCase())
     setLocation(localStorage.getItem('lsLocation'))
     document.getElementById(`${location}`)?.scrollIntoView();
   }
@@ -20,10 +20,10 @@ export default function Navbar({ logout }) {
   const [toggleDropDown, setDropDown] = useState(false);
 
   //scroll to view of localstorage variable
-useEffect(() => {
+  useEffect(() => {
     document.getElementById(`${location}`)?.scrollIntoView();
     localStorage.removeItem('lsLocation')
-}, [location])
+  }, [location])
 
   return (
     <nav className="NavbarItems">
@@ -70,7 +70,7 @@ useEffect(() => {
         className="profile-picture"
         onClick={() => setDropDown(!toggleDropDown)}
       />
-      <ul className={toggleDropDown ? "account-menu active" : "account-menu"}>
+      <ul className={toggleDropDown ? "account-menu active" : "account-menu"} style={{ zIndex: "1" }}>
         {AccountItems.map((item, index) => {
           return (
             <li
@@ -101,6 +101,6 @@ useEffect(() => {
           <Button children="Logout" onClick={logout} />
         </li>
       </ul>
-    </nav>
+    </nav >
   );
 }
