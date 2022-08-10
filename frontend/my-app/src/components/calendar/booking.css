@@ -1,0 +1,27 @@
+.services{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap:1rem;
+    height:150px;
+    margin:1rem 0 1rem 0;
+}
+.radio-container{
+    display: flex;
+    cursor: pointer;
+    
+}
+.times-wrapper{
+    display: flex;
+    flex-direction: row;
+    margin-top:10px;
+}
+.calendar-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calendar{
+    margin-top:5rem;
+}
+  

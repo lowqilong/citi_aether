@@ -1,4 +1,4 @@
-import { Intro, About, News, Footer } from "../components/index";
+import { Intro, About, News } from "../components/index";
 
 export function Home() {
   return (
@@ -6,7 +6,6 @@ export function Home() {
       <Intro />
       <About />
       <News />
-      <Footer />
     </div>
   );
 }

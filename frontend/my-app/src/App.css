@@ -2,21 +2,22 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'JetBrains Mono Thin';
+  font-family: "JetBrains Mono Thin";
 }
 :root {
   --primary: grey;
-  --primary-color: #DAA520;
-  --secondary-color: #B5AA99;
-  --secondary-bg: #FFEECB;
-  --secondary-bg-variant: #FFFDF6;
+  --primary-color: #daa520;
+  --secondary-color: #b5aa99;
+  --secondary-bg: #ffeecb;
+  --secondary-bg-variant: #fffdf6;
 
-  --font-color-primary: #1A1A1A;
+  --font-color-primary: #1a1a1a;
   --font-color-secondary: #808080;
-  --font-color-positive: #1BD465;
+  --font-color-positive: #1bd465;
 
+  --transition: all 0.5s ease-in-out;
 }
-section{
+section {
   display: flex;
   flex-direction: column;
   align-items: center;

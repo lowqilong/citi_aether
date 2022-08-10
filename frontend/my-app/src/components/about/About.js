@@ -33,7 +33,6 @@ const About = () => {
         <div className="about--container">
           {data.map(({ index, title, content, img }) => {
             return (
-              
               <div key={index} className={Number(index)%2===0?'about--wrapper2':'about--wrapper'}>
                 <div >
                   <h1>{title}</h1>
