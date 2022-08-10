@@ -1,5 +1,6 @@
 const express = require('express')
 const serverless = require('serverless-http');
+const cors = require('cors');
 const bodyParser = require("body-parser");
 require('dotenv').config()
 const app = express()
@@ -8,6 +9,9 @@ const AWS = require('aws-sdk');
 
 // parse application/json
 app.use(bodyParser.json())
+
+// enable cors
+app.use(cors())
 
 let awsConfig = {
     'region': "ap-southeast-1",
@@ -56,6 +60,14 @@ app.post('/getUserDetails', (req, res) => {
         if (err) {
             res.send(err);
         } else {
+            // const response = {
+            //     statusCode: 200,
+            //     headers: {
+            //         'Access-Control-Allow-Origin': '*',
+            //         'Access-Control-Allow-Credentials': true,
+            //     },
+            //     body: JSON
+            // }
             res.send(data.Item);
         }
     });
@@ -63,7 +75,7 @@ app.post('/getUserDetails', (req, res) => {
 
 // CHANGE USER ROUNDING VALUE
 // --------------------------------------------
-app.post('/changeRoundingValue', (req, res)=> {
+app.post('/changeRoundingValue', (req, res) => {
     var newRoundingValue = req.body.newRoundingValue;
     var updateObj = {
         TableName: "CitiUsers",
@@ -72,7 +84,7 @@ app.post('/changeRoundingValue', (req, res)=> {
         }
     };
     updateObj["UpdateExpression"] = `set roundingValue = :newRoundingValue`;
-    updateObj["ExpressionAttributeValues"] = {":newRoundingValue": newRoundingValue};
+    updateObj["ExpressionAttributeValues"] = { ":newRoundingValue": newRoundingValue };
 
     dynamoDB.update(updateObj, function (err, data) {
         if (err) {
@@ -88,7 +100,7 @@ app.post('/changeRoundingValue', (req, res)=> {
 
 // CHANGE MAIN INVESTMENT
 // --------------------------------------------
-app.post('/changeMainInvestment', (req, res)=> {
+app.post('/changeMainInvestment', (req, res) => {
     var newMainInvestmentName = req.body.newMainInvestment;
     var updateObj = {
         TableName: "CitiUsers",
@@ -97,7 +109,7 @@ app.post('/changeMainInvestment', (req, res)=> {
         }
     };
     updateObj["UpdateExpression"] = `set mainInvestment = :newMainInvestmentName`;
-    updateObj["ExpressionAttributeValues"] = {":newMainInvestmentName": newMainInvestmentName};
+    updateObj["ExpressionAttributeValues"] = { ":newMainInvestmentName": newMainInvestmentName };
     dynamoDB.update(updateObj, function (err, data) {
         if (err) {
             res.send(err);

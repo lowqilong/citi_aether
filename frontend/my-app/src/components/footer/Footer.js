@@ -6,16 +6,16 @@ const Footer = () => {
   const [clicked, setClicked] = useState("");
   const [location, setLocation] = useState(localStorage.getItem('lsLocation'))
   function handleScroll(e) {
-    localStorage.setItem('lsLocation',e.toLowerCase())
+    localStorage.setItem('lsLocation', e.toLowerCase())
     setLocation(localStorage.getItem('lsLocation'))
     document.getElementById(`${location}`)?.scrollIntoView();
-    
+
   }
   return (
     <div className='footer'>
       <div>
         <h1>AETHER</h1>
-        <small>FINANACE</small>
+        <small>FINANCE</small>
       </div>
       <div className='footer-nav'>
 
@@ -43,7 +43,7 @@ const Footer = () => {
             </div>
           );
         })}
-  
+
       </div>
     </div>
   )
