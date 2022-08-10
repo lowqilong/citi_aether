@@ -6,28 +6,17 @@ import "./PaymentSection.css";
 
 export function PaymentSection() {
     const [success, setSuccess] = useState(false)
+    const [description, setDescription] = useState("")
+    const [amount, setAmount] = useState(0)
 
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            console.log({
-                username: "keith",
-                transactionAmount: 3,
-                description: "Payment for Koufu"
-            })
-            // const response = await axios.post("localhost:4000/addTransaction",
-            //     {
-            //         username: "keith",
-            //         transactionAmount: 3,
-            //         description: "Payment for Koufu"
-            //     }
-            // );
-            const response = await axios.post("http://localhost:4000/getUserDetails",
-                // JSON.stringify({
-                //     username: "keith"
-                // })
+            const response = await axios.post("https://24bpm8rci1.execute-api.ap-southeast-1.amazonaws.com/dev/addTransaction",
                 {
-                    username: "keith"
+                    username: "keith",
+                    transactionAmount: parseFloat(amount),
+                    description: description
                 }
             );
             console.log(response?.data);
@@ -38,13 +27,8 @@ export function PaymentSection() {
             console.log(err)
         }
     };
-
-    const submitDummy = (event) => {
-        event.preventDefault();
-        setSuccess(true)
-    }
     
-    const makePaymentDummy = (event) => {
+    const makeAnotherPayment = (event) => {
         event.preventDefault();
         setSuccess(false)
     }
@@ -55,20 +39,33 @@ export function PaymentSection() {
                 <section>
                     <h1>Success!</h1>
                     <Link to={""}>
-                        <Button onClick={makePaymentDummy}>
+                        <Button onClick={makeAnotherPayment}>
                             Make Another Payment
                         </Button>
                     </Link>
                 </section>
             ) : (
-                <form onSubmit={submitDummy} className="paymentForm">
+                <form onSubmit={handleSubmit} className="paymentForm">
                     <h1>Payment</h1>
                     <label>Pay To</label>
-                    <input type="text" name="Paying To" />
+                    <input 
+                        type="text" 
+                        name="Paying To" 
+                        />
                     <label>Description</label>
-                    <input type="text" name="Description of transaction" />
+                    <input 
+                        type="text" 
+                        name="Description of transaction" 
+                        autoComplete="off"
+                        onChange={(event) => setDescription(event.target.value)}
+                        />
                     <label>Amount</label>
-                    <input type="float" name="Enter payment amount" />
+                    <input 
+                        type="float" 
+                        name="Enter payment amount" 
+                        autoComplete="off"
+                        onChange={(event) => setAmount(event.target.value)}
+                    />
                     <input type="submit"/>
                 </form>
             )}
