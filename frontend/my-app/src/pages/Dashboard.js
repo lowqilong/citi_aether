@@ -1,6 +1,7 @@
 import { Line } from 'react-chartjs-2';
 import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { React, useEffect, useState } from "react";
 import '../App.css';
 import {
   Chart as ChartJS,
@@ -38,6 +39,7 @@ export const options = {
 };
 
 const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+const axios = require('axios').default;
 
 export const data = {
   labels,
@@ -53,6 +55,26 @@ export const data = {
 };
 
 export function Dashboard() {
+  const [userDetails, setData] = useState([]);
+  const fetchData = async () => {
+    const data = await axios.post('https://24bpm8rci1.execute-api.ap-southeast-1.amazonaws.com/dev/getUserDetails',
+    {
+      "username": "keith"
+    })
+    .then(function (response) {
+      setData(response.data);
+      console.log(response.data);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  console.log(userDetails.dailyPortfolioValue);
+
   return (
     <div>
       <h1>Dashboard</h1>
@@ -60,7 +82,7 @@ export function Dashboard() {
         <Card className="customCard" style={{ width: '18rem', textAlign: 'center' }}>
           <Card.Body>
             <Card.Title>Current Value</Card.Title>
-            <Card.Subtitle className="mb-2 text-muted">2000.00</Card.Subtitle>
+            <Card.Subtitle className="mb-2 text-muted">{userDetails.dailyPortfolioValue}</Card.Subtitle>
           </Card.Body>
         </Card>
         <Card className="customCard" style={{ width: '18rem', textAlign: 'center' }}>
