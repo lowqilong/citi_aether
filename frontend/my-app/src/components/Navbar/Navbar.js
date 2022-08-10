@@ -45,6 +45,7 @@ export default function Navbar({ logout }) {
               key={index}
               onClick={function (e) {
                 setClicked(item.title);
+                setDropDown(false);
                 handleScroll(e.target.innerText);
               }}
             >
@@ -77,6 +78,7 @@ export default function Navbar({ logout }) {
               key={index}
               onClick={function () {
                 setClicked(item.title);
+                setDropDown(!toggleDropDown);
               }}
               className={
                 clicked === item.title
