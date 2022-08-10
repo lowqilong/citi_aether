@@ -23,3 +23,7 @@ section{
   justify-content: center;
   margin:5rem;
 }
+
+.customCard {
+  background: #FFEECB !important;
+}
