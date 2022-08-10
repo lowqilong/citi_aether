@@ -1,0 +1,129 @@
+.custom-radio {
+    position: absolute;
+    display: inline-block;
+    opacity: 0;
+  }
+  .custom-radio + label {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    white-space: nowrap;
+    line-height: 1rem;
+    align-items: center;
+    justify-items: center;
+    padding: 0 2rem 0 2rem;
+    margin: 0 2rem 0 0;
+    transition: var(--transition);
+    border: 1px solid var(--secondary-bg);
+    width:100%;
+    background-color: var(--secondary-bg);
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .radio-font>p{
+    font-size: 12px;
+    
+  }
+  .custom-radio + label span {
+    margin-left: 0.5rem;
+  }
+  .custom-radio + label::before, .custom-radio + label::after {
+    content: "";
+    position: absolute;
+    color: #f5f5f5;
+    text-align: center;
+    border-radius: 0;
+    top: 1.2rem;
+    left: 0.5rem;
+    width: 1rem;
+    height: 1rem;
+    transition: var(--transition);
+  }
+  .custom-radio + label::before {
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1rem;
+    border-radius: 0;
+    background-color: var(--secondary-bg-variant);
+    color: var(--secondary-bg-variant);
+    box-shadow: inset 0 0 0 1px var(--secondary-color), inset 0 0 0 1rem var(--secondary-bg-variant), inset 0 0 0 1rem var(--primary-color);
+  }
+  .custom-radio + label:hover, .custom-radio + label:focus, .custom-radio + label:active {
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+    outline: none;
+  }
+  .custom-radio + label:hover::before, .custom-radio + label:focus::before, .custom-radio + label:active::before {
+    color: var(--secondary-bg-variant);
+    -webkit-animation-duration: 0.5s;
+            animation-duration: 0.5s;
+    -webkit-animation-name: changeSizeAnim;
+            animation-name: changeSizeAnim;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+            animation-direction: alternate;
+    box-shadow: inset 0 0 0 1px var(--primary-color), inset 0 0 0 16px var(--secondary-bg-variant), inset 0 0 0 16px var(--primary-color);
+  }
+  .custom-radio:focus + label, .custom-radio:hover + label, .custom-radio:checked + label {
+    color: #220000 !important;
+  }
+  .custom-radio:focus + label::before, .custom-radio:hover + label::before, .custom-radio:checked + label::before {
+    -webkit-animation-duration: 0.3s;
+            animation-duration: 0.3s;
+    -webkit-animation-name: selectCheckboxAnim;
+            animation-name: selectCheckboxAnim;
+    -webkit-animation-iteration-count: 1;
+            animation-iteration-count: 1;
+    -webkit-animation-direction: alternate;
+            animation-direction: alternate;
+    border: solid 1px var(--primary-color);
+    box-shadow: inset 0 0 0 1px var(--secondary-bg), inset 0 0 0 0 var(--secondary-bg-variant), inset 0 0 1px 2px var(--secondary-color);
+  }
+  .custom-radio:checked + label::before {
+    content: "✔";
+    background-color: var(--primary-color);
+    color: var(--secondary-bg-variant);
+    border: solid 1px var(--primary-color);
+    box-shadow: inset 0 0 0 1px var(--secondary-bg), inset 0 0 0 0 var(--secondary-bg-variant), inset 0 0 0 16px var(--primary-color);
+  }
+  .custom-radio + label::before {
+    border-radius: 50%;
+  }
+  .custom-radio[type=checkbox] + label::before {
+    border-radius: 0;
+  }
+  @-webkit-keyframes changeSizeAnim {
+    from {
+      box-shadow: 0 0 0 0 var(--primary-color), inset 0 0 0 1px var(--primary-color), inset 0 0 0 16px var(--secondary-bg-variant), inset 0 0 0 16px var(--primary-color);
+    }
+    to {
+      box-shadow: 0 0 0 1px var(--primary-color), inset 0 0 0 1px var(--primary-color), inset 0 0 0 16px var(--secondary-bg-variant), inset 0 0 0 16px var(--primary-color);
+    }
+  }
+  @keyframes changeSizeAnim {
+    from {
+      box-shadow: 0 0 0 0 var(--primary-color), inset 0 0 0 1px var(--primary-color), inset 0 0 0 16px var(--secondary-bg-variant), inset 0 0 0 16px var(--primary-color);
+    }
+    to {
+      box-shadow: 0 0 0 1px var(--primary-color), inset 0 0 0 1px var(--primary-color), inset 0 0 0 16px var(--secondary-bg-variant), inset 0 0 0 16px var(--primary-color);
+    }
+  }
+  @-webkit-keyframes selectCheckboxAnim {
+    0% {
+      box-shadow: 0 0 0 0 var(--secondary-bg), inset 0 0 0 2px var(--secondary-bg-variant), inset 0 0 0 3px var(--primary-color), inset 0 0 0 16px var(--secondary-bg-variant), inset 0 0 0 16px var(--primary-color);
+    }
+    100% {
+      box-shadow: 0 0 20px 8px #eeddee, inset 0 0 0 0 white, inset 0 0 0 1px var(--secondary-bg), inset 0 0 0 0 var(--secondary-bg-variant), inset 0 0 0 16px var(--primary-color);
+    }
+  }
+  @keyframes selectCheckboxAnim {
+    0% {
+      box-shadow: 0 0 0 0 var(--secondary-bg), inset 0 0 0 2px var(--secondary-bg-variant), inset 0 0 0 3px var(--primary-color), inset 0 0 0 16px var(--secondary-bg-variant), inset 0 0 0 16px var(--primary-color);
+    }
+    100% {
+      box-shadow: 0 0 20px 8px #eeddee, inset 0 0 0 0 white, inset 0 0 0 1px var(--secondary-bg), inset 0 0 0 0 var(--secondary-bg-variant), inset 0 0 0 16px var(--primary-color);
+    }
+  }

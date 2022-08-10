@@ -10,6 +10,7 @@ export default function Navbar({ logout }) {
   function handleScroll(e) {
     localStorage.setItem('lsLocation',e.toLowerCase())
     setLocation(localStorage.getItem('lsLocation'))
+    document.getElementById(`${location}`)?.scrollIntoView();
   }
 
 
