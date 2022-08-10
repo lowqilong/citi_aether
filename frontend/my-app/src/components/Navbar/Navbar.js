@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { AccountItems } from "./AccountItems";
 import { MenuItems } from "./MenuItems";
 import { Button } from "../Button";
@@ -8,13 +8,21 @@ import "./Navbar.css";
 export default function Navbar({ logout }) {
 
   function handleScroll(e) {
-    const element = e.toLowerCase();
-    document.getElementById(`${element}`)?.scrollIntoView();
+    localStorage.setItem('lsLocation',e.toLowerCase())
+    setLocation(localStorage.getItem('lsLocation'))
   }
 
+
+  const [location, setLocation] = useState(localStorage.getItem('lsLocation'))
   const [toggleMenu, setToggle] = useState(false);
   const [clicked, setClicked] = useState("");
   const [toggleDropDown, setDropDown] = useState(false);
+
+  //scroll to view of localstorage variable
+useEffect(() => {
+    document.getElementById(`${location}`)?.scrollIntoView();
+    localStorage.removeItem('lsLocation')
+}, [location])
 
   return (
     <nav className="NavbarItems">
