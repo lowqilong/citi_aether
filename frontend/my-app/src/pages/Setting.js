@@ -142,19 +142,27 @@ export function Setting() {
                         <h4>When I make payments, I wish to round to the nearest...</h4>
                         <Form.Select aria-label="Default select example" onChange={e => { changeAmount(e.target.value) }}>
                             <option value={currentAmount}>Current amount: {currentAmount}</option>
+                            <option value="1">1</option>
+                            <option value="5">5</option>
                             <option value="10">10</option>
-                            <option value="15">15</option>
-                            <option value="20">20</option>
                         </Form.Select>
                     </div>
                     <div>
-                        <h2>Change main investment</h2>
+                        <h4>Change Main Investment</h4>
                         <Form.Select aria-label="Default select example" onChange={e => { changeInvestment(e.target.value) }}>
                             <option value={currentInvestment}>Current investment: {currentInvestment}</option>
                             <option value="SPY">SPY</option>
-                            <option value="AAPL">AAPL</option>
-                            <option value="VTI">VTI</option>
-                            <option value="OV8">OV8</option>
+                            <option value="GME">GME</option>
+                            <option value="PLTR">PLTR</option>
+                        </Form.Select>
+                    </div>
+                    <div>
+                        <h4>Monthly Fixed Contributions</h4>
+                        <Form.Select aria-label="Default select example" onChange={e => { changeInvestment(e.target.value) }}>
+                            <option value={currentInvestment}>Current investment: {currentInvestment}</option>
+                            <option value="SPY">SPY</option>
+                            <option value="GME">GME</option>
+                            <option value="PLTR">PLTR</option>
                         </Form.Select>
                     </div>
                     <Button variant="primary" type="submit" onClick={saveAllocations}>
@@ -162,11 +170,11 @@ export function Setting() {
                     </Button>
                 </div>
                 <div style={{ width: "60%" }}>
-                    <h2>Past Investments:</h2>
+                    <h2>Investments:</h2>
                     <Pie options={options} data={data} width={"30%"} />
                 </div>
             </div>
-            <h3>Recent History</h3>
+            <h3>Payments History</h3>
             <div style={{ background: "#FFEECB", width: "100%", height: "500px", flexDirection: "row", display: 'flex', gap: '20px', padding: "45px", borderRadius: "10px", overflow: "scroll" }}>
                 <Table>
                     <thead>
