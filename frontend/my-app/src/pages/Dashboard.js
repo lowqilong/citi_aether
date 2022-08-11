@@ -161,7 +161,7 @@ export function Dashboard() {
         <Card className="custom-card" style={{ width: '25%', height: '20%', textAlign: 'center' }}>
           <Card.Body>
             <h5 className="card-heading">Total Daily Portfolio Return (%)</h5>
-            <h3 className="mb-2 card-value">{portfolioReturn}%</h3>
+            <h3 className="mb-2 card-value">{Math.round(((portfolioReturn/(currentValue-portfolioReturn)*100) + Number.EPSILON) * 100)/100}%</h3>
           </Card.Body>
         </Card>
       </div>
