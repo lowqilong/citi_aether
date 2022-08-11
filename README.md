@@ -41,3 +41,39 @@ npm run start
 ```
 npx serverless deploy
 ```
+
+## Frontend App
+
+### Prerequisites
+
+1. Configure AWS profile on the CLI
+
+```
+aws configure
+```
+
+2. Pull amplify changes from AWS
+
+```
+amplify pull --appId <appId> --envName staging
+```
+
+### Running the application
+
+1. Go to frontend folder
+
+```
+cd frontend/my-app
+```
+
+2. Install packages
+
+```
+npm i
+```
+
+3. Run the application.
+
+```
+npm run start
+```
