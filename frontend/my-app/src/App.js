@@ -8,8 +8,9 @@ import { Navbar } from "./components/index";
 import {Footer} from './components/index'
 import { AllNews } from "./pages/AllNews";
 import { Payment } from "./pages/Payment";
-import {Booking} from './pages/Booking';
+import { Booking } from './pages/Booking';
 import { AllBankers } from './pages/Bankers';
+import { History } from './pages/History';
 
 
 
@@ -35,6 +36,7 @@ function App({signOut}) {
                 <Route path="/payment" element={<Payment />} />
                 <Route path="/setting" element={<Setting />} />
                 <Route path="/financialExperts" element={<AllBankers />} />
+                <Route path="/history" element={<History />} />
             </Routes>
             <Footer/>
         </div>

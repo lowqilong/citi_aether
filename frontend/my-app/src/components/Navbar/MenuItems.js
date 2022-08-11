@@ -14,11 +14,11 @@ export const MenuItems = [
         url: "booking",
         cName: "nav-links",
     },
-    {
-        title: "How It Works",
-        url: "/#about",
-        cName: "nav-links"
-    },
+    // {
+    //     title: "How It Works",
+    //     url: "/#about",
+    //     cName: "nav-links"
+    // },
     {
         title: "Education",
         url: "education",
