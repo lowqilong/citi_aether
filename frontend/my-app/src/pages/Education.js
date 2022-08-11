@@ -1,6 +1,7 @@
 import Card from 'react-bootstrap/Card';
 import { Button } from '../components/Button';
 import { Intro1 } from '../images/imgIndex';
+import { Link } from "react-router-dom";
 
 export function Education() {
     return (
@@ -11,7 +12,9 @@ export function Education() {
                         <h2>One-to-One Consultations</h2>
                         <p>To provide you with personalised advice on how you can plan and improve your financial future. Our Financial Experts are available by appointment, to guide you towards a better future.</p>
                         <p>With years of financial consultation experience under their belt, they are well adept and will provide valuable insights on how you can achieve your financial goals</p>
-                        <Button children="Book an Appointment" />
+                        <Link to="/booking" replace style={{textDecoration: 'none'}}>
+                            <Button children="Book an Appointment" />
+                        </Link>
                     </div>
 
                     <img src={Intro1} alt="intro img" />
