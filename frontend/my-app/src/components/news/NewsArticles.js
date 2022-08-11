@@ -28,6 +28,8 @@ const NewsArticles = ({ count }) => {
     <section>
       <h2>Specially Curated Articles, Keeping You Up To Date</h2>
       <div className="news--container">
+        {/* simple w3school loader when news API still loading */}
+        <div className={loading?'loader':'loader hidden'}></div>
         {news.map((data, index) => {
           if (index < count) {
             return (
