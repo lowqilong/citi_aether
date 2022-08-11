@@ -11,6 +11,7 @@ import { Payment } from "./pages/Payment";
 import { Booking } from './pages/Booking';
 import { AllBankers } from './pages/Bankers';
 import { History } from './pages/History';
+import { Events } from './pages/Events';
 
 
 
@@ -37,6 +38,7 @@ function App({signOut}) {
                 <Route path="/setting" element={<Setting />} />
                 <Route path="/financialExperts" element={<AllBankers />} />
                 <Route path="/history" element={<History />} />
+                <Route path="/events" element={<Events />} />
             </Routes>
             <Footer/>
         </div>

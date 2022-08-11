@@ -14,6 +14,11 @@ export const MenuItems = [
         url: "booking",
         cName: "nav-links",
     },
+    {
+        title: "Upcoming Events",
+        url: "events",
+        cName: "nav-links",
+    },
     // {
     //     title: "How It Works",
     //     url: "/#about",
