@@ -12,12 +12,16 @@
 
 4. Install packages (npm i)
 
-5. Run the application
+5. Run the application.
+
 For hot-reloading
+
 ```
 npm run dev
 ```
+
 No hot-reloading
+
 ```
 npm run start
 ```
