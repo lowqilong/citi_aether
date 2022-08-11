@@ -186,15 +186,15 @@ export function Setting() {
                         </tr>
                     </thead>
                     <tbody>
-                        {transactions.map((data) => {
+                        {transactions.reverse().map((data) => {
 
                             console.log(data)
                             return (
                                 <tr>
                                     <td>{data[0]}</td>
-                                    <td>{data[4]}</td>
-                                    <td>{data[3]}</td>
-                                    <td>{data[1]}</td>
+                                    <td>{data[4] !== "" ? data[4] : "Direct Contribution"}</td>
+                                    <td>{Math.round((Number.parseFloat(data[3]) + Number.EPSILON) * 100)/100}</td>
+                                    <td>{Math.round((data[1] + Number.EPSILON) * 100)/100}</td>
                                 </tr>
                             );
                         })}
