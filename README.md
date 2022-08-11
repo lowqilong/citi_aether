@@ -36,4 +36,8 @@ No hot-reloading
 npm run start
 ```
 
-### Running the Application
+### Deploying API with Serverless Framework
+
+```
+npx serverless deploy
+```
