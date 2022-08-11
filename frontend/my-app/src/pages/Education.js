@@ -1,6 +1,7 @@
 import Card from 'react-bootstrap/Card';
 import { Button } from '../components/Button';
 import { Intro1 } from '../images/imgIndex';
+import { Link } from "react-router-dom";
 
 export function Education() {
     return (
@@ -11,7 +12,9 @@ export function Education() {
                         <h2>One-to-One Consultations</h2>
                         <p>To provide you with personalised advice on how you can plan and improve your financial future. Our Financial Experts are available by appointment, to guide you towards a better future.</p>
                         <p>With years of financial consultation experience under their belt, they are well adept and will provide valuable insights on how you can achieve your financial goals</p>
-                        <Button children="Book an Appointment" />
+                        <Link to="/booking" replace style={{textDecoration: 'none'}}>
+                            <Button children="Book an Appointment" />
+                        </Link>
                     </div>
 
                     <img src={Intro1} alt="intro img" />
@@ -44,6 +47,51 @@ export function Education() {
                     </div>
 
                     <img src={Intro1} alt="intro img" />
+                </div>
+            </section>
+
+            <h1>Investment 101</h1>
+            <section>
+                <div className="intro">
+                        <div>
+                            <div>
+                            <h3>What is investing?</h3>
+                            <p>
+                            Investing, broadly, is putting money to work for a period of time in some sort of project or undertaking in order to generate positive returns
+                            (i.e., profits that exceed the amount of the initial investment). It is the act of allocating resources, usually capital (i.e., money),
+                            with the expectation of generating an income, profit, or gains.
+                            </p>
+                            <Link to="#" style={{textDecoration: 'none'}}>
+                                Read more <i className="fa-solid fa-arrow-right-long"></i>
+                            </Link>
+                            </div>
+                        </div>
+                </div>
+                <div className="intro">
+                        <div >
+                            <div>
+                            <h3>Intro to Equities</h3>
+                            <p>
+                            Equity, typically referred to as shareholders' equity (or owners' equity for privately held companies), represents the amount of money that would be returned to a company's shareholders if all of the assets were liquidated and all of the company's debt was paid off in the case of liquidation. In the case of acquisition, it is the value of company sales minus any liabilities owed by the company not transferred with the sale.
+                            </p>
+                            <Link to="#" style={{textDecoration: 'none'}}>
+                                Read more <i className="fa-solid fa-arrow-right-long"></i>
+                            </Link>
+                            </div>
+                        </div>
+                </div>
+                <div className="intro">
+                        <div >
+                            <div>
+                            <h3>Intro to Equities</h3>
+                            <p>
+                            Equity, typically referred to as shareholders' equity (or owners' equity for privately held companies), represents the amount of money that would be returned to a company's shareholders if all of the assets were liquidated and all of the company's debt was paid off in the case of liquidation. In the case of acquisition, it is the value of company sales minus any liabilities owed by the company not transferred with the sale.
+                            </p>
+                            <Link to="#" style={{textDecoration: 'none'}}>
+                                Read more <i className="fa-solid fa-arrow-right-long"></i>
+                            </Link>
+                            </div>
+                        </div>
                 </div>
             </section>
 
