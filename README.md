@@ -8,19 +8,21 @@
 
 2. Add your AWS credentials into the .env file.
 
-3. Go to backend folder
+### Running the application
+
+1. Go to backend folder
 
 ```
 cd backend
 ```
 
-4. Install packages
+2. Install packages
 
 ```
 npm i
 ```
 
-5. Run the application.
+3. Run the application.
 
 For hot-reloading
 
