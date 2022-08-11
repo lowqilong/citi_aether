@@ -31,11 +31,11 @@ export default function Navbar({ logout }) {
         <h2 className="navbar-logo">
           AETHER FINANCE
         </h2>
-        <img
+        {/* <img
           src={require("../../images/Penguin.png")}
           alt="Aether Finance Logo"
           className="logo-image"
-        />
+        /> */}
       </div>
       <div className="menu-icon" onClick={() => setToggle(!toggleMenu)}>
         <i className={toggleMenu ? "fas fa-times" : "fas fa-bars"}></i>
