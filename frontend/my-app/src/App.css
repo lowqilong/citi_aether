@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "JetBrains Mono Thin";
+  font-family: "Urbanist";
 }
 :root {
   --primary: grey;
@@ -23,4 +25,23 @@ section {
   align-items: center;
   justify-content: center;
   margin:5rem;
+}
+
+.custom-card {
+  background: #FFEECB !important;
+}
+
+.card-heading {
+  font-weight: 200 !important;
+  color: #808080;
+}
+
+.card-value {
+  font-weight: 1000 !important;
+  color: #000000 !important;
+}
+
+.page-title {
+  font-weight: 1000 !important;
+  color: #DAA520 !important;
 }

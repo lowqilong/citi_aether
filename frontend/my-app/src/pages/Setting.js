@@ -147,7 +147,7 @@ export function Setting() {
                             <option value="10">10</option>
                         </Form.Select>
                     </div>
-                    <div>
+                    <div style={{ paddingBottom: "30px" }}>
                         <h4>Change Main Investment</h4>
                         <Form.Select aria-label="Default select example" onChange={e => { changeInvestment(e.target.value) }}>
                             <option value={currentInvestment}>Current investment: {currentInvestment}</option>
