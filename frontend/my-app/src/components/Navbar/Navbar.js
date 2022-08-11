@@ -48,6 +48,7 @@ export default function Navbar({ logout }) {
               onClick={function (e) {
                 setClicked(item.title);
                 setDropDown(false);
+                setToggle(false);
                 handleScroll(e.target.innerText);
               }}
             >

@@ -26,7 +26,7 @@ export const MenuItems = [
     },
     {
         title: "Latest News",
-        url: "/#news",
+        url: "allnews",
         cName: "nav-links"
     }
 ]
