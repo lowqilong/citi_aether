@@ -13,6 +13,7 @@ export function Setting() {
     const [currentInvestment, setInvestment] = useState();
     const [investments, setInvestments] = useState();
     const [transactions, setTransactions] = useState([]);
+    const [fixedContribution, setFixedContribution] = useState(50);
 
     const fetchInvestment = async () => {
         try {
@@ -64,6 +65,10 @@ export function Setting() {
 
     const changeInvestment = (event) => {
         setInvestment(event)
+    }
+
+    const changeFixedContribution = (event) => {
+        setFixedContribution(event);
     }
 
     const saveAllocations = async () => {
@@ -158,12 +163,13 @@ export function Setting() {
                     </div>
                     <div>
                         <h4>Monthly Fixed Contributions</h4>
-                        <Form.Select aria-label="Default select example" onChange={e => { changeInvestment(e.target.value) }}>
-                            <option value={currentInvestment}>Current investment: {currentInvestment}</option>
+                        <p>{fixedContribution}</p>
+                        <Form.Range aria-label="Default select example" onChange={e => { changeFixedContribution(e.target.value) }}>
+                            {/* <option value={currentInvestment}>Current investment: {currentInvestment}</option>
                             <option value="SPY">SPY</option>
                             <option value="GME">GME</option>
-                            <option value="PLTR">PLTR</option>
-                        </Form.Select>
+                            <option value="PLTR">PLTR</option> */}
+                        </Form.Range>
                     </div>
                     <Button variant="primary" type="submit" onClick={saveAllocations}>
                         Save Allocations
