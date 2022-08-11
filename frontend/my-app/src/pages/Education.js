@@ -83,9 +83,9 @@ export function Education() {
                 <div className="intro">
                         <div >
                             <div>
-                            <h3>Intro to Equities</h3>
+                            <h3>What is ESG Investing?</h3>
                             <p>
-                            Equity, typically referred to as shareholders' equity (or owners' equity for privately held companies), represents the amount of money that would be returned to a company's shareholders if all of the assets were liquidated and all of the company's debt was paid off in the case of liquidation. In the case of acquisition, it is the value of company sales minus any liabilities owed by the company not transferred with the sale.
+                            Environmental, social and corporate governance (ESG) investing focuses on companies that support environmental protection, social justice, and ethical management practices. Like all investors, ESG investors value returns. However, they do not prioritize profits above supporting companies that fit into their ethical frameworks.
                             </p>
                             <Link to="#" style={{textDecoration: 'none'}}>
                                 Read more <i className="fa-solid fa-arrow-right-long"></i>
