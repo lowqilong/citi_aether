@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import Calendar from "react-calendar";
 import { Button } from "../Button";
+var FileSaver = require('file-saver');
 const time = [
   { slot: 1, time: "10:00", bookings: [] },
   { slot: 2, time: "11:00", bookings: [] },
@@ -26,7 +27,10 @@ function Times(props) {
     }
   }
   function handleSubmit(){
-    alert('Successfully submitted')
+    alert(`Successfully submitted. \n A file will be downloaded. \n Click on it to save the consultation to your calendar`)
+    var msg = `BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//Aether//Event Scheduler//EN\nBEGIN:VEVENT\nSUMMARY:Aether Consultation\nUID:22f15698-b368-4b24-ae96-a84d55da6fe1\nSTATUS:CONFIRMED\nTRANSP:TRANSPARENT\nDTSTART:20220814T220000\nDTEND:20220814T230000\nDTSTAMP:20220810T161534\nDESCRIPTION:Aether Consultation with Financial Expert\nEND:VEVENT\nEND:VCALENDAR`;
+    var blob = new Blob([msg], { type: "data:text/calendar;charset=utf-8" });
+    FileSaver.saveAs(blob, "hello world.ics");
     localStorage.setItem("eventType",eventType)
   }
   return (
