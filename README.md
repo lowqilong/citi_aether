@@ -8,9 +8,17 @@
 
 2. Add your AWS credentials into the .env file.
 
-3. Go to backend folder (cd backend)
+3. Go to backend folder
 
-4. Install packages (npm i)
+```
+cd backend
+```
+
+4. Install packages
+
+```
+npm i
+```
 
 5. Run the application.
 
