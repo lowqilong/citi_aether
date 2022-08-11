@@ -26,12 +26,17 @@ function Times(props) {
       console.log(e.target.innerText);
     }
   }
+
   function handleSubmit(){
     var startTime = parseInt(event.slice(0,2)+ "0000");
-    let day= props.date.toISOString().slice(0,10).replaceAll('-','')
+    
+    let date1 = props.date.toISOString().slice(0,10).split('-')
+    let day1 = Number(date1.splice(2))+1
+    date1.push(day1)
+    let newDate1 = date1.join('')
     var endTime = startTime + 10000;
     alert(`Successfully submitted. \n A file will be downloaded. \n Click on it to save the consultation to your calendar`)
-    var msg = `BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//Aether//Event Scheduler//EN\nBEGIN:VEVENT\nSUMMARY:Aether Consultation${eventType}\nUID:22f15698-b368-4b24-ae96-a84d55da6fe1\nSTATUS:CONFIRMED\nTRANSP:TRANSPARENT\nDTSTART:${day}T${startTime}\nDTEND:${day}T${endTime}\nDTSTAMP:20220810T161534\nDESCRIPTION:Aether Consultation with Financial Expert\nEND:VEVENT\nEND:VCALENDAR`;
+    var msg = `BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//Aether//Event Scheduler//EN\nBEGIN:VEVENT\nSUMMARY:Aether Consultation${eventType}\nUID:22f15698-b368-4b24-ae96-a84d55da6fe1\nSTATUS:CONFIRMED\nTRANSP:TRANSPARENT\nDTSTART:${newDate1}T${startTime}\nDTEND:${newDate1}T${endTime}\nDTSTAMP:20220810T161534\nDESCRIPTION:Aether Consultation with Financial Expert\nEND:VEVENT\nEND:VCALENDAR`;
     var blob = new Blob([msg], { type: "data:text/calendar;charset=utf-8" });
     FileSaver.saveAs(blob, "AetherFinanceConsultation.ics");
     localStorage.setItem("eventType",eventType)
@@ -52,7 +57,7 @@ function Times(props) {
         {info && localStorage.getItem("type")===eventType
           ? `Your appointment for ${localStorage.getItem(
               "type"
-            )} is set to ${event} ${props.date.toISOString()} `
+            )} is set to ${event} ${props.date.toDateString()} `
           : null}
       </div>
       {/* <button type="button" disabled={disabled} onClick={handleSubmit}>
