@@ -1,8 +1,6 @@
 import { React, useEffect, useState } from "react";
 import axios from "axios";
 import "./news.css";
-import { Link } from "react-router-dom";
-import Content from "./Content";
 const NewsArticles = ({ count }) => {
   const [news, setNews] = useState([]);
   const [loading, setLoading] = useState(true);
