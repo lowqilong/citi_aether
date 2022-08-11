@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 export default function Navbar({ logout }) {
-
+  console.log(MenuItems);
   function handleScroll(e) {
     localStorage.setItem('lsLocation', e.toLowerCase())
     setLocation(localStorage.getItem('lsLocation'))

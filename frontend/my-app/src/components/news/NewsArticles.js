@@ -26,7 +26,7 @@ const NewsArticles = ({ count }) => {
 
   return (
     <section>
-      <h2>Important Everyday News to Keep You Updated</h2>
+      <h2>Specially Curated Articles, Keeping You Up To Date</h2>
       <div className="news--container">
         {news.map((data, index) => {
           if (index < count) {

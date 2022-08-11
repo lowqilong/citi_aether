@@ -4,23 +4,24 @@ import { About1, chart1, chart2 } from "../../images/imgIndex";
 const data = [
   {
     index:1,
-    title: "Growing Your Knowledge",
+    title: "Step 1: Sign Up For An Account",
     content:
-      "Taking you a step at a time into having financial literacy to begin and manage your journey in micro-investing",
+      "Create your account and Aether Portfolio in 5 minutes",
     img: About1,
   },
   {
     index:2,
-    title: "Bite-sized investments",
+    title: "Step 2: Invest with any amount",
     content:
-      "Set manageable amounts to invest. Helping you with dollar-cost averaging that will reward you in the long run",
+      `Set manageable amounts to invest. Helping you with dollar-cost averaging that will reward you in the long run
+      \n (Need help? Consult our friendly guides)`,
     img: chart1,
   },
   {
     index:3,
-    title: "Connecting you",
+    title: "Step 3: Build Relationships, Hone Your Skills",
     content:
-      "We connect you to professionals to better advise and manage your portfolio",
+      "Engage with our Financial Experts, industry professionals and fellow Aether peers through social and online events. Build meaningful relationships and improve your financial skills at the same time",
     img: chart2,
   },
 ];
@@ -28,15 +29,15 @@ const About = () => {
   return (
     <section id='about'>
       <div className="about">
-        <small>What We Do?</small>
+        <h1>How It Works</h1>
 
         <div className="about--container">
           {data.map(({ index, title, content, img }) => {
             return (
               <div key={index} className={Number(index)%2===0?'about--wrapper2':'about--wrapper'}>
                 <div >
-                  <h1>{title}</h1>
-                  <p>{content}</p>
+                  <h2>{title}</h2>
+                  <h5>{content}</h5>
                 </div>
                 <img src={img} alt="about" />
               </div>

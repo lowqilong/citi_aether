@@ -28,9 +28,9 @@ function Times(props) {
   }
   function handleSubmit(){
     alert(`Successfully submitted. \n A file will be downloaded. \n Click on it to save the consultation to your calendar`)
-    var msg = `BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//Aether//Event Scheduler//EN\nBEGIN:VEVENT\nSUMMARY:Aether Consultation\nUID:22f15698-b368-4b24-ae96-a84d55da6fe1\nSTATUS:CONFIRMED\nTRANSP:TRANSPARENT\nDTSTART:20220814T220000\nDTEND:20220814T230000\nDTSTAMP:20220810T161534\nDESCRIPTION:Aether Consultation with Financial Expert\nEND:VEVENT\nEND:VCALENDAR`;
+    var msg = `BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//Aether//Event Scheduler//EN\nBEGIN:VEVENT\nSUMMARY:Aether Consultation\nUID:22f15698-b368-4b24-ae96-a84d55da6fe1\nSTATUS:CONFIRMED\nTRANSP:TRANSPARENT\nDTSTART:20220825T140000\nDTEND:20220825T150000\nDTSTAMP:20220810T161534\nDESCRIPTION:Aether Consultation with Financial Expert\nEND:VEVENT\nEND:VCALENDAR`;
     var blob = new Blob([msg], { type: "data:text/calendar;charset=utf-8" });
-    FileSaver.saveAs(blob, "hello world.ics");
+    FileSaver.saveAs(blob, "AetherFinanceConsultation.ics");
     localStorage.setItem("eventType",eventType)
   }
   return (
