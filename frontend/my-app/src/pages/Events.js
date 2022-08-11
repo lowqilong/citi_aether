@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 export function Events() {
     return (
         <section>
-            <section id='home'>
+            {/* <section id='home'>
                 <div className="intro">
                     <div className="intro--wrapper">
                         <h2>One-to-One Consultations</h2>
@@ -19,7 +19,7 @@ export function Events() {
 
                     <img src={Intro1} alt="intro img" />
                 </div>
-            </section>
+            </section> */}
             <section id='home'>
                 <div className="intro">
                     <div className="intro--wrapper">
