@@ -26,15 +26,17 @@ export default function Navbar({ logout }) {
   }, [location])
 
   return (
-    <nav className="NavbarItems">
-      <h2 className="navbar-logo">
-        AETHER FINANCE
+    <nav className="NavbarItems" style={{ marginBottom: '40px' }}>
+      <div style={{ flexDirection: "row", display: 'flex', gap: '10px', justifyContent: 'space-between', alignItems: 'center' }}>
+        <h2 className="navbar-logo">
+          AETHER FINANCE
+        </h2>
         <img
           src={require("../../images/Penguin.png")}
           alt="Aether Finance Logo"
           className="logo-image"
         />
-      </h2>
+      </div>
       <div className="menu-icon" onClick={() => setToggle(!toggleMenu)}>
         <i className={toggleMenu ? "fas fa-times" : "fas fa-bars"}></i>
       </div>

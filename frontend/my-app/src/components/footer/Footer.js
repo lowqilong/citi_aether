@@ -12,38 +12,10 @@ const Footer = () => {
 
   }
   return (
-    <div className='footer'>
+    <div className='footer' style={{ padding: "20px" }}>
       <div>
         <h1>AETHER</h1>
         <small>FINANCE</small>
-      </div>
-      <div className='footer-nav'>
-
-        {MenuItems.map((item, index) => {
-          return (
-            <div
-              key={index}
-              onClick={function (e) {
-                setClicked(item.title);
-                handleScroll(e.target.innerText);
-              }}
-            >
-              <Link
-                className={
-                  item.cName === "nav-links"
-                    ? clicked === item.title
-                      ? "nav-links active"
-                      : "nav-links"
-                    : "nav-links-mobile"
-                }
-                to={item.url}
-              >
-                {item.title}
-              </Link>
-            </div>
-          );
-        })}
-
       </div>
     </div>
   )
