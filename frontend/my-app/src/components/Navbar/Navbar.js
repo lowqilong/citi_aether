@@ -28,9 +28,11 @@ export default function Navbar({ logout }) {
   return (
     <nav className="NavbarItems" style={{ marginBottom: '40px' }}>
       <div style={{ flexDirection: "row", display: 'flex', gap: '10px', justifyContent: 'space-between', alignItems: 'center' }}>
-        <h2 className="navbar-logo">
-          AETHER FINANCE
-        </h2>
+        <Link to="/" style={{textDecoration: 'none'}}>
+            <h2 className="navbar-logo">
+            AETHER FINANCE
+            </h2>
+        </Link>
         {/* <img
           src={require("../../images/Penguin.png")}
           alt="Aether Finance Logo"
