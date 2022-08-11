@@ -59,7 +59,7 @@ export function Dashboard() {
 
   var currentValue = 0; //includes cash
   for (const key of Object.keys(userLastDailyPortfolio)) {
-    if (key != "cash") {
+    if (key != "Cash") {
       currentPortfolioValue += userLastDailyPortfolio[key];
     }
     currentValue += userLastDailyPortfolio[key];
@@ -67,7 +67,7 @@ export function Dashboard() {
   var totalInvested = 0
   var portfolioReturn = 0;
   for (const key of Object.keys(userInvestments)) {
-    if (key != "cash") {
+    if (key != "Cash") {
       totalInvested += userInvestments[key];
     }
   }
@@ -155,7 +155,7 @@ export function Dashboard() {
         <Card className="custom-card" style={{ width: '25%', height: '20%', textAlign: 'center' }}>
           <Card.Body>
             <h5 className="card-heading">Total Portfolio Returns</h5>
-            <h3 className="mb-2 card-value">+${currentPortfolioValue}</h3>
+            <h3 className="mb-2 card-value">+${portfolioReturn}</h3>
           </Card.Body>
         </Card>
         <Card className="custom-card" style={{ width: '25%', height: '20%', textAlign: 'center' }}>
