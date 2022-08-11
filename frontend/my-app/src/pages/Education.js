@@ -50,7 +50,7 @@ export function Education() {
                 </div>
             </section> */}
 
-            <h1>Investment 101</h1>
+            <h1>Educational articles that might interest you</h1>
             <section>
                 <div className="intro">
                         <div>
